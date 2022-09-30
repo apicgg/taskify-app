@@ -1,10 +1,22 @@
 import React from 'react'
 import './styles.css'
 
-const InputField = () => {
+interface TodoProps {
+  todo: string
+  setTodo: React.Dispatch<React.SetStateAction<string>>
+  handleAdd: () => void
+}
+
+const InputField = (props: TodoProps) => {
   return (
-    <form className='input'>
-      <input type='input' placeholder='Enter a task' className='input__box' />
+    <form className='input' onSubmit={props.handleAdd}>
+      <input
+        type='input'
+        placeholder='Enter a task'
+        value={props.todo}
+        onChange={(e) => props.setTodo(e.target.value)}
+        className='input__box'
+      />
       <button className='input__submit' type='submit'>
         Go
       </button>
