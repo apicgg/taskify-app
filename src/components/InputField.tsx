@@ -15,7 +15,7 @@ const InputField = ({ todo, setTodo, handleAdd }: TodoProps) => {
       className='input'
       onSubmit={(e) => {
         handleAdd(e)
-        inputRef.current?.blur
+        inputRef.current?.blur()
       }}>
       <input
         ref={inputRef}
