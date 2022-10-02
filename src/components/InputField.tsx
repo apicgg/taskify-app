@@ -4,7 +4,7 @@ import './styles.css'
 interface TodoProps {
   todo: string
   setTodo: React.Dispatch<React.SetStateAction<string>>
-  handleAdd: () => void
+  handleAdd: (e: React.FormEvent) => void
 }
 
 const InputField = ({ todo, setTodo, handleAdd }: TodoProps) => {
